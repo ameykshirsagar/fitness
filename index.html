@@ -40,11 +40,10 @@
       <link rel="stylesheet" type="text/css" href="plugins/css/af.scroller.css"  />
       <link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  />
       <link rel="stylesheet" type="text/css" href="plugins/css/af.progress.css"  />
-      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-      <script type="text/javascript" charset="utf-8" src="./plugins/com.plugin.datepicker/www/android/DatePicker.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+         <script type="text/javascript" charset="utf-8" src="./plugins/com.plugin.datepicker/www/android/DatePicker.js"></script>
        <script type="text/javascript" src="./plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"></script>
-        <script type="text/javascript" src="./plugins/org.apache.cordova.statusbar/www/statusbar.js"></script>
-        <script type="text/javascript" src="./plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js"></script>
+        <script type="text/javascript" src="./plugins/cordova-plugin-statusbar/www/statusbar.js"></script>
         <!-- uncomment for intel.xdk apps
         <script type="text/javascript" charset="utf-8" src="intelxdk.js"></script>
         <script type="text/javascript" charset="utf-8" src="xhr.js"></script>
@@ -54,19 +53,13 @@
         <script>
             var onDeviceReady = function () {
                 console.log("fired")
-                StatusBar.hide();                  
+                StatusBar.hide();  
+                
                 setTimeout(function (argument) {
                     StatusBar.show()
                 },8200)
             };
             document.addEventListener("deviceready", onDeviceReady, false);
-            function loadedPanel(what) {
-                //We are going to set the badge as the number of li elements inside the target
-                $.ui.updateBadge("#aflink", $("#af").find("li").length);
-            }
-            function unloadedPanel(what) {
-                console.log("unloaded " + what.id);
-            }
 
             if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
                 var script = document.createElement("script");
@@ -76,7 +69,8 @@
             }
 
           //  $.feat.nativeTouchScroll=true;
-
+            //This code is used to run as soon as intel.xdk activates
+            
         </script>
         <script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
         <script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
@@ -96,7 +90,7 @@
         <script type="text/javascript" charset="utf-8" src="./ui/transitions/slideDown.js"></script>
         <script type="text/javascript" charset="utf-8" src="./ui/transitions/slideUp.js"></script> -->
         <script type="text/javascript" charset="utf-8" src="./plugins/af.slidemenu.js"></script>
- 
+
         <script type="text/javascript">
             /* This function runs once the page is loaded, but intel.xdk is not yet active */
             var webRoot = "./";
@@ -107,10 +101,7 @@
             $.ui.splitview=false;
            // $.ui.animateHeaders=true;
 
-
-            //This code is used to run as soon as intel.xdk activates
-                    </script>
-
+        </script>
        
 </head>
 
@@ -1543,9 +1534,29 @@ for you. Unlock all the Premium features of YFSN!</p>
         <script type="text/javascript" charset="utf-8" src="js/models.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/events.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/triggers.js"></script>
-        <div id="events"></div>
         <script type="text/javascript">
-        
+        Model.init()
+        Model.checkFirstRun(function (run) {
+            if (!run) {
+                $.ui.showMask("Intitalizing..");
+                Model.addAppSettings();
+                Events.triggerAch('ach_1')
+                $.ui.showMask("Enter the information about you..")
+                setTimeout(function () {
+                   $.ui.hideMask()
+                   $('#afui').popup('Enter your information. It is important to understand you.')
+                   $.ui.loadContent('my_info_edit',false,false,'none')
+                },3000);
+            }
+        });
+        $("#date_start").html(moment().format("Do MMMM YYYY"));
+
+    /*  Model.getTodayData(function(config) {
+
+    }); */
+    Model.getWeekData(function(config) {
+        Model.getMonthData();
+    });
                 $(document).ready(function () {
 
                     function placemainmenu () {
