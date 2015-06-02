@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('fonts/raleway_thin-webfont.eot');
+    src: url('fonts/raleway_thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/raleway_thin-webfont.woff') format('woff'),
+         url('fonts/raleway_thin-webfont.ttf') format('truetype'),
+         url('fonts/raleway_thin-webfont.svg#amblebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Lig.eot');
+    src: url('fonts/Lato-Lig.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Lato-Lig.woff') format('woff'),
+         url('fonts/Lato-Lig.ttf') format('truetype'),
+         url('fonts/Lato-Lig.svg#Lato-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

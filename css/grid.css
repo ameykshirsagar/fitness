@@ -1,0 +1,63 @@
+
+#afui .grid {
+  padding-top: 20px;
+  width: 100%;
+  overflow:hidden; /* hack to take up height*/
+  color:inherit;
+  padding-bottom: 10px;
+}
+.grid-ctrl{
+  padding-top: 30%;
+}
+#afui .col2,
+#afui .col3,
+#afui .col1-3,
+#afui .col2-3 {
+  float: none;
+  width: 100%;
+}
+#afui .grid:after {
+  content: '';
+  clear: both;
+}
+@media handheld, only screen and (min-width: 5px) {
+  #afui .col2 {
+    width: 50%;
+    float: left;
+  }
+  #afui .col2-pro{
+    padding: 1px 10px;
+  }
+  #afui .col2-bt-grp{
+    padding: 5px;
+  }
+  #afui .col2-pro-info-ques{
+    padding: 3px 0px 0px 22px !important;
+  }
+  #afui .col2-pro-info-ans{
+    text-align: right !important;
+  }
+  #afui .col2-pro-info{
+    color: #000;
+  }
+  #afui .col3 {
+    width: 33.3%;
+    float: left;
+  }
+  #afui .col1-3 {
+    width: 33.3%;
+    float: left;
+  }
+  #afui .col2-3 {
+    width: 66.6%;
+    float: left;
+  }
+  #afui .col1-3n {
+    width: 13.3%;
+    float: left;
+  }
+  #afui .col2-3n {
+    width: 86.6%;
+    float: left;
+  }
+}

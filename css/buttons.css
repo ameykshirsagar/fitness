@@ -1,0 +1,308 @@
+#afui .button {
+width: 98%;
+display: inline-block;
+margin: -1px 0;
+font-size: 17px;
+font-family: 'Lato',sans-serif;
+color: #000 !important;
+text-align: center;
+vertical-align: top;
+cursor: pointer;
+background-color: #eee;
+border: 1px solid #666;
+border-radius: 6px;
+/* box-shadow: 0 1px 0 #fff; */
+text-decoration: none;
+z-index: 2;
+}
+#afui .nrm-button {
+	width: 100%;
+	position:relative;
+	display:inline-block;
+	padding:14px 14px;
+	margin:8px 0;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+	vertical-align:top;
+	cursor:pointer;
+	background-color:#34495E;
+	/*box-shadow: 0 1px 0 #fff;*/
+
+	text-decoration: none;
+	z-index:2;
+}
+
+/* Active */
+#afui .nrm-button.pressed { background:#fff; color: #000}
+
+#afui .mod-button {
+width: 100%;
+display: inline-block;
+margin: -1px 0;
+font-size: 19px;
+font-family: 'Lato',sans-serif;
+color: #000;
+text-align: center;
+vertical-align: top;
+padding: 7px;
+cursor: pointer;
+background-color: inherit;
+/* box-shadow: 0 1px 0 #fff; */
+text-decoration: none;
+z-index: 2;
+}
+#afui .bin-button {
+width: 60%;
+display: inline-block;
+padding: 5px;
+margin: 1px 0;
+font-size: 17px;
+font-family: 'Lato',sans-serif;
+color: #000;
+text-align: center;
+vertical-align: top;
+cursor: pointer;
+background-color: #eee;
+border: 1px solid #666;
+border-radius: 3px;
+/* box-shadow: 0 1px 0 #fff; */
+text-decoration: none;
+z-index: 2;
+}
+#afui .nav-button {
+width: 40%;
+display: inline-block;
+padding: 10px;
+font-size: 16px;
+font-family: 'Lato',sans-serif;
+color: #000;
+text-align: center;
+  text-transform: uppercase;
+vertical-align: middle;
+cursor: pointer;
+background-color: #3FC380;
+border: 1px solid #3FC380;
+border-radius: 19px;
+/* box-shadow: 0 1px 0 #fff; */
+text-decoration: none;
+z-index: 2;
+}
+#afui .modal-nav-button{
+	margin: 7px 0px 0px 0px;
+}
+#afui .nav-button.logout{
+	color: #fff;
+	background:inherit;
+}
+/* Active */
+#afui .button.pressed { background:#fff; }
+#afui .bin-button.pressed { background:#fff; }
+#afui .nav-button.pressed { background:#fff; }
+#afui .logout.pressed { background:#fff; color: #000;}
+
+#afui .button.previous {
+
+	margin-left:16px;
+	padding-left:6px;
+	border-color:#666 #666 transparent transparent !important;
+}
+#afui .button.next {
+	border-color:#666 transparent #666 #666 !important;
+	margin-right:16px;
+	padding-right:6px;
+}
+
+
+#afui .button.previous::after {
+
+    z-index:-1;
+	content:'';
+	position:absolute;
+	width:25px; height:25px;
+	background-color:inherit;
+  	top:3px; left:-11px;
+    border-radius:5px;
+    border:1px solid;
+	border-color:transparent transparent inherit transparent;
+     -webkit-transform:rotate(45deg); transform:rotate(45deg);
+}
+#afui .button.next::after {
+	z-index:-1;
+	content:'';
+	position:absolute;
+	width:25px; height:25px;
+	background-color:inherit;
+  	top:3px; right:-11px;
+    border-radius:5px;
+    border:1px solid;
+    border-color:transparent transparent transparent transparent;
+   -webkit-transform:rotate(45deg); transform:rotate(45deg);
+}
+
+#afui .button.block {	display:block; }
+
+#afui .button.flat {
+	border-radius: 0;
+	box-shadow:none;
+}
+
+#afui .header .button-grouped>.button {
+	margin:0;
+    border-color:#fff;
+}
+
+#afui .button-grouped { 
+    display:inline-block;
+    margin: 5px;
+}
+#afui .button-grouped * {
+	border-radius:0px;
+	border-left:0px solid transparent;
+	border-right: 1px solid #666;
+	border-bottom: 1px solid #666;
+	border-top: 1px solid #666;
+    margin:0;
+}
+#afui .button-grouped > .button:first-child {
+	border-left: none;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+#afui .button-grouped > .button:last-child {
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+#afui .button-grouped.flex {
+	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	display: -webkit-flex;
+  	display: flex;
+  	margin-top: 30%;
+}
+
+#afui .button-grouped.flex > .button {
+	-webkit-box-flex: 1;
+  	-moz-box-flex: 1 auto;
+  	-webkit-flex: 1 auto;
+  	-ms-flex: 1 auto;
+  	flex: 1 auto;
+	white-space: inherit;
+	overflow: hidden;
+	text-overflow: inherit;
+	padding: 32px;
+}
+
+#afui .button-grouped.flex.vertical {
+	display: inline-block;
+}
+
+#afui .button-grouped.vertical * {
+	border-radius:0px;
+	display:block;
+	float:none;
+	width:100%;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+	border-top: 1px solid #666;
+    border-bottom: 0px solid #666;
+}
+
+#afui .button-grouped.vertical > .button:first-child {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px;
+}
+#afui .button-grouped.vertical > .button:last-child {
+	border-top-right-radius:0px;
+    border-top-left-radius:0px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom:1px solid #666;
+}
+
+
+#afui .button.gray {
+	background:#999;
+	border-color:#666;
+}
+
+#afui .button.yellow {
+	background-color:#F1C222;
+	border-color:#999;
+}
+
+#afui .button.red {
+	color:#fff;
+	text-shadow:0 -1px 0 #666;
+	background:#B20000;
+	border-color:#666;
+}
+
+#afui .button.green {
+	color:#fff;
+	text-shadow:0 -1px 0 #666;
+	background:#009C0C;
+	border-color:#666;
+}
+
+#afui .button.orange {
+	color:#fff;
+	text-shadow:0 -1px 0 #666;
+	background-color:#FF8000;
+	border-color:#666;
+}
+
+#afui .button.black {
+	color:#fff;
+	text-shadow:none;
+	background:#000;
+	border-color:#666;
+}
+
+#afui .button.slate {
+	color:#fff;
+	text-shadow:0 -1px 0 #000;
+	background:#171F28;
+	border-color:#666;
+}
+
+#afui .header .button {
+    color: #fff;
+    background:none;
+    border-color: transparent;
+ 	font-size:12px;
+	padding:7px;
+ 	height:32px;
+	margin:5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+ 
+.header .button.icon:before{
+    padding-left:6px;
+}
+ 
+#afui #backButton {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.profile-but.pressed{
+	background-color: #3FC380 !important;
+	color: #fff;
+}
+.profile-but{
+	color: #3FC380 !important;
+	margin: 0px !important;
+	background-color: inherit !important;
+}
+.button-small{
+	width: 50% !important;
+	margin: 10px 0px
+}
+.mod-alert{
+	padding: 9px !important;
+}

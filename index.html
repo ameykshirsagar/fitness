@@ -1,0 +1,1612 @@
+﻿<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+    <head>
+        <script>
+        (function() {
+    if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
+        var msViewportStyle = document.createElement("style");
+        msViewportStyle.appendChild(
+            document.createTextNode("@-ms-viewport{width:auto!important}")
+        );
+        document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+    }
+})();
+</script>
+
+        <title>YFSN</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" type="text/css" href="css/icons.css" />
+
+       <!--
+     <link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
+  -->
+      <link rel="stylesheet" type="text/css" href="css/main.css"  />
+      <link rel="stylesheet" type="text/css" href="css/appframework.css"  />
+      <link rel="stylesheet" type="text/css" href="css/lists.css"  />
+      <link rel="stylesheet" type="text/css" href="css/forms.css"  />
+      <link rel="stylesheet" type="text/css" href="css/buttons.css"  />
+      <link rel="stylesheet" type="text/css" href="css/badges.css"  />
+      <link rel="stylesheet" type="text/css" href="css/grid.css"  />
+      <link rel="stylesheet" type="text/css" href="css/android.css"  />
+      <link rel="stylesheet" type="text/css" href="css/fonts.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.actionsheet.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.popup.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.scroller.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  />
+      <link rel="stylesheet" type="text/css" href="plugins/css/af.progress.css"  />
+
+        <!-- uncomment for intel.xdk apps
+        <script type="text/javascript" charset="utf-8" src="intelxdk.js"></script>
+        <script type="text/javascript" charset="utf-8" src="xhr.js"></script>
+        -->
+        <script type="text/javascript" charset="utf-8" src="./appframework.js"></script>
+        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+        <script>
+
+            function loadedPanel(what) {
+                //We are going to set the badge as the number of li elements inside the target
+                $.ui.updateBadge("#aflink", $("#af").find("li").length);
+            }
+            function unloadedPanel(what) {
+                console.log("unloaded " + what.id);
+            }
+
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+                //$.os.desktop=true;
+            }
+
+          //  $.feat.nativeTouchScroll=true;
+
+        </script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.passwordBox.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.scroller.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.selectBox.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.touchEvents.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.touchLayer.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.popup.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.progress.js"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.popup.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/appframework.ui.js"></script>
+        <!-- <script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script> -->
+        <script type="text/javascript" charset="utf-8" src="./js/moment.min.js"></script>
+        <!--<script type="text/javascript" charset="utf-8" src="./ui/transitions/slide.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/slideDown.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./ui/transitions/slideUp.js"></script> -->
+        <script type="text/javascript" charset="utf-8" src="./plugins/af.slidemenu.js"></script>
+
+        <script type="text/javascript">
+            /* This function runs once the page is loaded, but intel.xdk is not yet active */
+            var webRoot = "./";
+            $.ui.useOSThemes=true;
+            $.os.android=true;
+            $.ui.autoLaunch = false;
+            $.ui.openLinksNewTab = false;
+            $.ui.splitview=false;
+           // $.ui.animateHeaders=true;
+
+
+            //This code is used to run as soon as intel.xdk activates
+            var onDeviceReady = function () {
+                console.log("fired")
+                StatusBar.hide();  
+                
+                setTimeout(function (argument) {
+                    StatusBar.show()
+                },8200)
+            };
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+
+        </script>
+        <script type="text/javascript" charset="utf-8" src="./plugins/com.plugin.datepicker/www/android/DatePicker.js"></script>
+       <script type="text/javascript" src="./plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"></script>
+        <script type="text/javascript" src="./plugins/org.apache.cordova.statusbar/www/statusbar.js"></script>
+        <script type="text/javascript" src="./plugins/de.appplant.cordova.plugin.local-notification/www/local-notification.js"></script>
+</head>
+
+    <body>
+        <div id="afui" class="android dark">
+            <!-- this is the splashscreen you see. -->
+            <div id="info_mask" class="signal"></div>
+            <div id="header">
+                <a id='menubadge' class='menuButton'></a>
+            </div>
+            <div id="content">
+                <div class="panel" id="splash_screen" data-header="none" data-footer="none">
+                <img src="" id="splash_screen_img">
+                    <script type="text/javascript">
+                    
+                    $("#splash_screen_img").ready(function () {
+                        
+                        $("#splash_screen_img").css('height',window.innerHeight+'px');
+                        $("#splash_screen_img").css('width',window.innerWidth+'px');
+                        $("#splash_screen_img").css('display','block');
+                        setTimeout(function () {
+                           
+                            $.ui.loadContent('home');
+                            $.ui.clearHistory()
+                            Model.isMyInfo(function (is) {
+                                if (!is) {
+                                  alert("First add info about yourself in My Info section");
+                                };
+                            });
+                        },10000)
+                    });                       
+                    </script>
+                </div>
+                <div title="Dashboard" id="home" class="panel" selected="true" >
+                <span id="main_bg"></span>
+                    <div class="main-nav">
+                        <ul class="nav">
+                    <li><a class="button" style="background-color:#ee3968" onclick='$.ui.loadContent("friends_home")'><span>Share</span></a></li>
+
+                        <li><a class="button" style="background-color:#ef5723" onclick='$.ui.loadContent("tips_home")' id="purchases_bt"><span>Tips </span></a></li>
+
+                        <li><a class="button" style="background-color:#f2a829" onclick='$.ui.loadContent("purchases_home")'><span>Purchases </span></a></li>
+
+
+                        <li id="charts_bt"><a class="button" style="background-color:#8bbe40"><span>Charts </span></a></li>
+
+                        <li><a class="button" style="background-color:#81d0d6" id="my_info_bt"><span>My Info </span></a></li>
+                        </ul>
+                    </div>
+                    <center><p style="text-transform: uppercase; position: absolute; bottom: 39vh; left: 5%; margin: 0px; font-size: 10px; text-align: right;">Your guide to a healthy lifestyle and diet</p></center>
+                    <header>
+                        <h1><span style="font-weight:bold">you're fat</span> <span style="color:#d35400">|</span> she is not</h1>
+                       <a href="#info" id="" class="new-icon disclaimer disclaimer_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a><a href="#info" id="" class="new-icon info info_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a>
+                    </header>
+                    <footer>
+                        <span style="float:right;padding:0% 6%;margin-top:1vh">Based on book by Sachin Mayi</span>
+                    </footer>
+                </div>
+
+            <!-- ------------------------------------------ -->
+
+             <!---------------------------------------------->
+                <div title=" edit my info" id="my_info_edit" class="panel" selected="true">
+               <header>
+                    <h1><span style="font-weight:bold">you're fat</span> <span style="color:#81d0d5">|</span> she is not</h1>
+                   <a href="#info" id="" class="new-icon disclaimer disclaimer_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a><a href="#" id="" class="new-icon info info_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a>
+                </header>
+                <footer>
+                        <div class="grid" style="padding-top:0px">
+                            <div class="col1-3"><a href="#" class="custom_back"><img src="css/images/back.png" width="100%"></a></div>
+                            <div class="col2-3" style="width:100%;text-align:right;margin-top:1vh"><span style="padding:2% 6%">Based on book by Sachin Mayi</span></div>
+                        </div>
+                    </footer>
+                <div style="border-bottom:1px solid #81D0D6; width:100%">
+                    <a href="#" class="button" style="width:40%;background:#81d0d6;padding:5px;border-radius: 13px 13px 0px 0px;">My Info</a>
+                </div>
+                <div style="padding:15px;">
+                <p class="info_head">Start Date of App usage</p>
+                    <div class="grid" style="padding-top:0px">
+                        <div class="col1-3n left_info_tab" >
+                            <p>Date:</p>
+                        </div>
+                        <div class="col2-3n right_info_tab"><p id="date_start">11-02-1990</p></div>
+                    </div>
+                    <p class="info_head">Name</p>
+                    <input type="text" id="myname" class="inp_info">
+                    <p class="info_head">Date of Birth</p>
+                    <input type="date" id="dob_ip" class="inp_info">
+                    <p class="info_head">Weight</p>
+                    <div class="grid">
+                        <div class="col1-3n left_info_tab"><input type="number" id="wt_info_ip"><span id="wt_unit"></span></div>
+                        <div class="col2-3n right_info_tab" style="text-align:center">
+                            <div id="selectTest" style="-webkit-transform: translate3d(0, 0, 0)">
+                                <span>
+                                    <select id="wt_type" style="-webkit-appearance: listbox;">
+                                        <option value="1">Pounds</option>
+                                        <option value="2">Kilograms</option>
+                                    </select>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="info_head">Gender</p>
+                    <div class="right_info_tab" style="text-align:center">
+                        <div id="selectTest" style="-webkit-transform: translate3d(0, 0, 0)">
+                                <span>
+                                    <select id="gender_ip" style="-webkit-appearance: listbox;">
+                                        <option value="m">Male</option>
+                                        <option value="f">Female</option>
+                                    </select>
+                                </span>
+                            </div>
+                    </div>
+                    <p class="info_head">Known Issues</p>
+                    <div class="right_info_tab" style="text-align:center">
+                        <div id="selectTest" style="-webkit-transform: translate3d(0, 0, 0)">
+                                <span>
+                                    <select id="issues_ip" style="-webkit-appearance: listbox;">
+                                      <option value="no">None</option>
+                                        <option value="as">Asthma</option>
+                                        <option value="hd">Heart Disease</option>
+                                        <option value="bp">Blood Pressure</option>
+                                        <option value="di">Diabetes</option>
+                                        <option value="ov">Overweight</option>
+                                    </select>
+                                </span>
+                            </div>
+                    </div>
+                    <p class="info_head">Current Medications</p>
+                    <div>
+                        <input type="text" style="background:blue" id="curr_med_ip" class="inp_info">
+                    </div>
+                    <p class="info_head">General Health</p>
+                    <div>
+                        <input type="text" style="background:blue" id="gen_ht_ip" class="inp_info">
+                    </div>
+                    <p class="info_head">Time of food intake</p>
+                    <div class="grid">
+                        <div class="col3" style="padding-right:2%"><input type="text" id="morn_ip" class="time inp_info"></div>
+                        <div class="col3" style="padding-right:2%"><input type="text" id="aftn_ip" class="time inp_info"></div>
+                        <div class="col3"><input type="text" id="evng_ip" class="time inp_info"></div>
+                    </div>
+                    <a href="#" class="nrm-button" id="my_info_add" onclick="$.ui.goBack()">Add Data</a>
+                    </div>
+                </div>
+            <!-- ------------------------------------------ -->
+
+             <!---------------------------------------------->
+                <div title="Charts" id="charts_home" class="panel" selected="true">
+                    <header>
+                        <h1><span style="font-weight:bold">you're fat</span> <span style="color:#d35400">|</span> she is not</h1>
+                        <a href="#info" id="" class="new-icon disclaimer disclaimer_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a><a href="#" id="" class="new-icon info info_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a>
+                    </header>
+                    <footer>
+                        <div class="grid" style="padding-top:0px">
+                            <div class="col1-3"><a href="#" class="custom_back"><img src="css/images/back.png" width="100%"></a></div>
+                            <div class="col2-3" style="width:100%;text-align:right;margin-top:1vh"><span style="padding:2% 6%">Based on book by Sachin Mayi</span></div>
+                        </div>
+                    </footer>
+                    <div style="border-bottom:1px solid #8bbe40; width:100%">
+                        <a href="#" class="button" style="width:40%;background:#8bbe40;padding:5px;border-radius: 13px 13px 0px 0px;">Charts</a>
+                    </div>
+                    <table class="ta1">
+                        <colgroup><col width="59"/><col width="59"/><col width="59"/><col width="59"/><col width="59"/><col width="59"/><col width="59"/><col width="59"/></colgroup>
+                        <tr>
+                            <td> <p> </p></td>
+                            <td><p class="cbs sunl"><a id="sun">Sun</a></p></td>
+                            <td><p class="cbs monl"><a id="mon">Mon</a></p></td>
+                            <td><p class="cbs tuel"><a id="tue">Tue</a></p></td>
+                            <td><p class="cbs wedl"><a id="wed">Wed</a></p></td>
+                            <td><p class="cbs thul"><a id="thu">Thu</a></p></td>
+                            <td><p class="cbs fril"><a id="fri">Fri</a></p></td>
+                            <td><p class="cbs satl"><a id="sat">Sat</a></p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Start weight
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb1" for="sun1" ></label>
+                                    <input class="sun" id="sun1" type="checkbox" name="sun1" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb1" for="mon1" ></label>
+                                    <input class="mon" id="mon1" type="checkbox" name="mon1" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb1" for="tue1" ></label>
+                                    <input class="tue" id="tue1" type="checkbox" name="tue1" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb1" for="wed1" ></label>
+                                    <input class="wed" id="wed1" type="checkbox" name="wed1" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb1" for="thu1" ></label>
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb1" for="fri1" ></label>
+                                    <input class="fri" id="fri1" type="checkbox" name="fri1" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb1" for="sat1" ></label>
+                                    <input class="sat" id="sat1" type="checkbox" name="sat1" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    General feeling
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb2" for="sun2" ></label>
+                                    <input class="sun" id="sun2" type="checkbox" name="sun2" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb2" for="mon2" ></label>
+                                    <input class="mon" id="mon2" type="checkbox" name="mon2" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb2" for="tue2" ></label>
+                                    <input class="tue" id="tue2" type="checkbox" name="tue2" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb2" for="wed2" ></label>
+                                    <input class="wed" id="wed2" type="checkbox" name="wed2" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb2" for="thu2" ></label>
+                                    <input class="thu" id="thu2" type="checkbox" name="thu2" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb2" for="fri2" ></label>
+                                    <input class="fri" id="fri2" type="checkbox" name="fri2" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb2" for="sat2" ></label>
+                                    <input class="sat" id="sat2" type="checkbox" name="sat2" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    General appearance
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb3" for="sun3" ></label>
+                                    <input class="sun" id="sun3" type="checkbox" name="sun3" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb3" for="mon3" ></label>
+                                    <input class="mon" id="mon3" type="checkbox" name="mon3" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb3" for="tue3" ></label>
+                                    <input class="tue" id="tue3" type="checkbox" name="tue3" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb3" for="wed3" ></label>
+                                    <input class="wed" id="wed3" type="checkbox" name="wed3" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb3" for="thu3" ></label>
+                                    <input class="thu" id="thu3" type="checkbox" name="thu3" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb3" for="fri3" ></label>
+                                    <input class="fri" id="fri3" type="checkbox" name="fri3" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb3" for="sat3" ></label>
+                                    <input class="sat" id="sat3" type="checkbox" name="sat3" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Stretched
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb4" for="sun4" ></label>
+                                    <input class="sun" id="sun4" type="checkbox" name="sun4" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb4" for="mon4" ></label>
+                                    <input class="mon" id="mon4" type="checkbox" name="mon4" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb4" for="tue4" ></label>
+                                    <input class="tue" id="tue4" type="checkbox" name="tue4" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb4" for="wed4" ></label>
+                                    <input class="wed" id="wed4" type="checkbox" name="wed4" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb4" for="thu4" ></label>
+                                    <input class="thu" id="thu4" type="checkbox" name="thu4" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb4" for="fri4" ></label>
+                                    <input class="fri" id="fri4" type="checkbox" name="fri4" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb4" for="sat4" ></label>
+                                    <input class="sat" id="sat4" type="checkbox" name="sat4" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Hydrated
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb5" for="sun5" ></label>
+                                    <input class="sun" id="sun5" type="checkbox" name="sun5" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb5" for="mon5" ></label>
+                                    <input class="mon" id="mon5" type="checkbox" name="mon5" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb5" for="tue5" ></label>
+                                    <input class="tue" id="tue5" type="checkbox" name="tue5" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb5" for="wed5" ></label>
+                                    <input class="wed" id="wed5" type="checkbox" name="wed5" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb5" for="thu5" ></label>
+                                    <input class="thu" id="thu5" type="checkbox" name="thu5" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb5" for="fri5" ></label>
+                                    <input class="fri" id="fri5" type="checkbox" name="fri5" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb5" for="sat5" ></label>
+                                    <input class="sat" id="sat5" type="checkbox" name="sat5" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Eliminated
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb6" for="sun6" ></label>
+                                    <input class="sun" id="sun6" type="checkbox" name="sun6" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb6" for="mon6" ></label>
+                                    <input class="mon" id="mon6" type="checkbox" name="mon6" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb6" for="tue6" ></label>
+                                    <input class="tue" id="tue6" type="checkbox" name="tue6" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb6" for="wed6" ></label>
+                                    <input class="wed" id="wed6" type="checkbox" name="wed6" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb6" for="thu6" ></label>
+                                    <input class="thu" id="thu6" type="checkbox" name="thu6" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb6" for="fri6" ></label>
+                                    <input class="fri" id="fri6" type="checkbox" name="fri6" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb6" for="sat6" ></label>
+                                    <input class="sat" id="sat6" type="checkbox" name="sat6" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Bathed
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb7" for="sun7" ></label>
+                                    <input class="sun" id="sun7" type="checkbox" name="sun7" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb7" for="mon7" ></label>
+                                    <input class="mon" id="mon7" type="checkbox" name="mon7" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb7" for="tue7" ></label>
+                                    <input class="tue" id="tue7" type="checkbox" name="tue7" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb7" for="wed7" ></label>
+                                    <input class="wed" id="wed7" type="checkbox" name="wed7" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb7" for="thu7" ></label>
+                                    <input class="thu" id="thu7" type="checkbox" name="thu7" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb7" for="fri7" ></label>
+                                    <input class="fri" id="fri7" type="checkbox" name="fri7" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb7" for="sat7" ></label>
+                                    <input class="sat" id="sat7" type="checkbox" name="sat7" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Meditated
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb8" for="sun8" ></label>
+                                    <input class="sun" id="sun8" type="checkbox" name="sun8" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb8" for="mon8" ></label>
+                                    <input class="mon" id="mon8" type="checkbox" name="mon8" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb8" for="tue8" ></label>
+                                    <input class="tue" id="tue8" type="checkbox" name="tue8" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb8" for="wed8" ></label>
+                                    <input class="wed" id="wed8" type="checkbox" name="wed8" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb8" for="thu8" ></label>
+                                    <input class="thu" id="thu8" type="checkbox" name="thu8" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb8" for="fri8" ></label>
+                                    <input class="fri" id="fri8" type="checkbox" name="fri8" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb8" for="sat8" ></label>
+                                    <input class="sat" id="sat8" type="checkbox" name="sat8" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Sun – Time
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb9" for="sun9" ></label>
+                                    <input class="sun" id="sun9" type="checkbox" name="sun9" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb9" for="mon9" ></label>
+                                    <input class="mon" id="mon9" type="checkbox" name="mon9" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb9" for="tue9" ></label>
+                                    <input class="tue" id="tue9" type="checkbox" name="tue9" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb9" for="wed9" ></label>
+                                    <input class="wed" id="wed9" type="checkbox" name="wed9" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb9" for="thu9" ></label>
+                                    <input class="thu" id="thu9" type="checkbox" name="thu9" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb9" for="fri9" ></label>
+                                    <input class="fri" id="fri9" type="checkbox" name="fri9" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb9" for="sat9" ></label>
+                                    <input class="sat" id="sat9" type="checkbox" name="sat9" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Earth – Time
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb10" for="sun10" ></label>
+                                    <input class="sun" id="sun10" type="checkbox" name="sun10" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb10" for="mon10" ></label>
+                                    <input class="mon" id="mon10" type="checkbox" name="mon10" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb10" for="tue10" ></label>
+                                    <input class="tue" id="tue10" type="checkbox" name="tue10" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb10" for="wed10" ></label>
+                                    <input class="wed" id="wed10" type="checkbox" name="wed10" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb10" for="thu10" ></label>
+                                    <input class="thu" id="thu10" type="checkbox" name="thu10" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb10" for="fri10" ></label>
+                                    <input class="fri" id="fri10" type="checkbox" name="fri10" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb10" for="sat10" ></label>
+                                    <input class="sat" id="sat10" type="checkbox" name="sat10" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>
+                                    Ate Processed Food
+                                </p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb11" for="sun11" ></label>
+                                    <input class="sun" id="sun11" type="checkbox" name="sun11" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb11" for="mon11" ></label>
+                                    <input class="mon" id="mon11" type="checkbox" name="mon11" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb11" for="tue11" ></label>
+                                    <input class="tue" id="tue11" type="checkbox" name="tue11" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb11" for="wed11" ></label>
+                                    <input class="wed" id="wed11" type="checkbox" name="wed11" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb11" for="thu11" ></label>
+                                    <input class="thu" id="thu11" type="checkbox" name="thu11" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb11" for="fri11" ></label>
+                                    <input class="fri" id="fri11" type="checkbox" name="fri11" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb11" for="sat11" ></label>
+                                    <input class="sat" id="sat11" type="checkbox" name="sat11" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Ate Wheat</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb12" for="sun12" ></label>
+                                    <input class="sun" id="sun12" type="checkbox" name="sun12" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb12" for="mon12" ></label>
+                                    <input class="mon" id="mon12" type="checkbox" name="mon12" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb12" for="tue12" ></label>
+                                    <input class="tue" id="tue12" type="checkbox" name="tue12" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb12" for="wed12" ></label>
+                                    <input class="wed" id="wed12" type="checkbox" name="wed12" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb12" for="thu12" ></label>
+                                    <input class="thu" id="thu12" type="checkbox" name="thu12" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb12" for="fri12" ></label>
+                                    <input class="fri" id="fri12" type="checkbox" name="fri12" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb12" for="sat12" ></label>
+                                    <input class="sat" id="sat12" type="checkbox" name="sat12" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Ate Dairy</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb13" for="sun13" ></label>
+                                    <input class="sun" id="sun13" type="checkbox" name="sun13" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb13" for="mon13" ></label>
+                                    <input class="mon" id="mon13" type="checkbox" name="mon13" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb13" for="tue13" ></label>
+                                    <input class="tue" id="tue13" type="checkbox" name="tue13" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb13" for="wed13" ></label>
+                                    <input class="wed" id="wed13" type="checkbox" name="wed13" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb13" for="thu13" ></label>
+                                    <input class="thu" id="thu13" type="checkbox" name="thu13" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb13" for="fri13" ></label>
+                                    <input class="fri" id="fri13" type="checkbox" name="fri13" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb13" for="sat13" ></label>
+                                    <input class="sat" id="sat13" type="checkbox" name="sat13" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Ate Sugar</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb14" for="sun14" ></label>
+                                    <input class="sun" id="sun14" type="checkbox" name="sun14" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb14" for="mon14" ></label>
+                                    <input class="mon" id="mon14" type="checkbox" name="mon14" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb14" for="tue14" ></label>
+                                    <input class="tue" id="tue14" type="checkbox" name="tue14" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb14" for="wed14" ></label>
+                                    <input class="wed" id="wed14" type="checkbox" name="wed14" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb14" for="thu14" ></label>
+                                    <input class="thu" id="thu14" type="checkbox" name="thu14" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb14" for="fri14" ></label>
+                                    <input class="fri" id="fri14" type="checkbox" name="fri14" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb14" for="sat14" ></label>
+                                    <input class="sat" id="sat14" type="checkbox" name="sat14" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Overate</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb15" for="sun15" ></label>
+                                    <input class="sun" id="sun15" type="checkbox" name="sun15" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb15" for="mon15" ></label>
+                                    <input class="mon" id="mon15" type="checkbox" name="mon15" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb15" for="tue15" ></label>
+                                    <input class="tue" id="tue15" type="checkbox" name="tue15" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb15" for="wed15" ></label>
+                                    <input class="wed" id="wed15" type="checkbox" name="wed15" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb15" for="thu15" ></label>
+                                    <input class="thu" id="thu15" type="checkbox" name="thu15" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb15" for="fri15" ></label>
+                                    <input class="fri" id="fri15" type="checkbox" name="fri15" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb15" for="sat15" ></label>
+                                    <input class="sat" id="sat15" type="checkbox" name="sat15" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Excercised</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb16" for="sun16" ></label>
+                                    <input class="sun" id="sun16" type="checkbox" name="sun16" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb16" for="mon16" ></label>
+                                    <input class="mon" id="mon16" type="checkbox" name="mon16" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb16" for="tue16" ></label>
+                                    <input class="tue" id="tue16" type="checkbox" name="tue16" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb16" for="wed16" ></label>
+                                    <input class="wed" id="wed16" type="checkbox" name="wed16" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb16" for="thu16" ></label>
+                                    <input class="thu" id="thu16" type="checkbox" name="thu16" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb16" for="fri16" ></label>
+                                    <input class="fri" id="fri16" type="checkbox" name="fri16" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb16" for="sat16" ></label>
+                                    <input class="sat" id="sat16" type="checkbox" name="sat16" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Focused on Posture</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb17" for="sun17" ></label>
+                                    <input class="sun" id="sun17" type="checkbox" name="sun17" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb17" for="mon17" ></label>
+                                    <input class="mon" id="mon17" type="checkbox" name="mon17" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb17" for="tue17" ></label>
+                                    <input class="tue" id="tue17" type="checkbox" name="tue17" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb17" for="wed17" ></label>
+                                    <input class="wed" id="wed17" type="checkbox" name="wed17" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb17" for="thu17" ></label>
+                                    <input class="thu" id="thu17" type="checkbox" name="thu17" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb17" for="fri17" ></label>
+                                    <input class="fri" id="fri17" type="checkbox" name="fri17" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb17" for="sat17" ></label>
+                                    <input class="sat" id="sat17" type="checkbox" name="sat17" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Cleared / Organized</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb18" for="sun18" ></label>
+                                    <input class="sun" id="sun18" type="checkbox" name="sun18" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb18" for="mon18" ></label>
+                                    <input class="mon" id="mon18" type="checkbox" name="mon18" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb18" for="tue18" ></label>
+                                    <input class="tue" id="tue18" type="checkbox" name="tue18" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb18" for="wed18" ></label>
+                                    <input class="wed" id="wed18" type="checkbox" name="wed18" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb18" for="thu18" ></label>
+                                    <input class="thu" id="thu18" type="checkbox" name="thu18" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb18" for="fri18" ></label>
+                                    <input class="fri" id="fri18" type="checkbox" name="fri18" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb18" for="sat18" ></label>
+                                    <input class="sat" id="sat18" type="checkbox" name="sat18" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Positive Mental Attitude</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb19" for="sun19" ></label>
+                                    <input class="sun" id="sun19" type="checkbox" name="sun19" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb19" for="mon19" ></label>
+                                    <input class="mon" id="mon19" type="checkbox" name="mon19" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb19" for="tue19" ></label>
+                                    <input class="tue" id="tue19" type="checkbox" name="tue19" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb19" for="wed19" ></label>
+                                    <input class="wed" id="wed19" type="checkbox" name="wed19" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb19" for="thu19" ></label>
+                                    <input class="thu" id="thu19" type="checkbox" name="thu19" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb19" for="fri19" ></label>
+                                    <input class="fri" id="fri19" type="checkbox" name="fri19" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb19" for="sat19" ></label>
+                                    <input class="sat" id="sat19" type="checkbox" name="sat19" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>Selfless Service</p></td>
+                            <td> <p>
+                                    <label class="sun cb" id="sunlb20" for="sun20" ></label>
+                                    <input class="sun" id="sun20" type="checkbox" name="sun20" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="mon cb" id="monlb20" for="mon20" ></label>
+                                    <input class="mon" id="mon20" type="checkbox" name="mon20" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="tue cb" id="tuelb20" for="tue20" ></label>
+                                    <input class="tue" id="tue20" type="checkbox" name="tue20" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="wed cb" id="wedlb20" for="wed20" ></label>
+                                    <input class="wed" id="wed20" type="checkbox" name="wed20" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="thu cb" id="thulb20" for="thu20" ></label>
+                                    <input class="thu" id="thu20" type="checkbox" name="thu20" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="fri cb" id="frilb20" for="fri20" ></label>
+                                    <input class="fri" id="fri20" type="checkbox" name="fri20" value="E" >
+                                </p></td>
+                            <td> <p>
+                                    <label class="sat cb" id="satlb20" for="sat20" ></label>
+                                    <input class="sat" id="sat20" type="checkbox" name="sat20" value="E" >
+                                </p></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td> <p>End of the Day weight</p></td>
+                            <td> <p>
+                            <label class="sun cb" id="sunlb21" for="sun21" ></label>
+                                    <input class="sun" id="sun21" type="checkbox" name="sun21" value="E" >
+                                </p></td>
+                            <td> <p>
+                            <label class="mon cb" id="monlb21" for="mon21" ></label>
+                                    <input class="mon" id="mon21" type="checkbox" name="mon21" value="E" >
+                                </p></td>
+                            <td> <p>
+                            <label class="tue cb" id="tuelb21" for="tue21" ></label>
+                                    <input class="tue" id="tue21" type="checkbox" name="tue21" value="E" >
+                                </p></td>
+                            <td> <p>
+                            <label class="wed cb" id="wedlb21" for="wed21" ></label>
+                                    <input class="wed" id="wed21" type="checkbox" name="wed21" value="E" >
+                                </p></td>
+                            <td> <p>
+                            <label class="thu cb" id="thulb21" for="thu21" ></label>
+                                    <input class="thu" id="thu21" type="checkbox" name="thu21" value="E" >
+                                </p></td>
+                            <td> <p>
+                                <label class="fri cb" id="frilb21" for="fri21" ></label>
+                                    <input class="fri" id="fri21" type="checkbox" name="fri21" value="E" >
+                                </p></td>
+                            <td> <p>
+                                <label class="sat cb" id="satlb21" for="sat21" ></label>
+                                    <input class="sat" id="sat21" type="checkbox" name="sat21" value="E" >
+                                </p></td>
+                        </tr>
+                         <tr class="ro1">
+                            <td> <p>Score</p></td>
+                            <td>
+                            <p>
+                            <label class="sun cb" id="sunlb22" for="sun22" ></label>
+                                <input class="sun" id="sun22" type="checkbox" name="sun22" value="E" >
+                            </p>
+                            </td>
+                            <td> <p>
+                            <label class="mon cb" id="monlb22" for="mon21" ></label>
+                                    <input class="mon" id="mon22" type="checkbox" name="mon22" value="E" >
+                                </p></td>
+                            <td> <p>
+                            <label class="tue cb" id="tuelb22" for="tue22" ></label>
+                                    <input class="tue" id="tue22" type="checkbox" name="tue22" value="E" >
+                                </p></td>
+                            <td> <p>
+                            <label class="wed cb" id="wedlb22" for="wed22" ></label>
+                                    <input class="wed" id="wed22" type="checkbox" name="wed22" value="E" >
+                                </p></td>
+                            <td> <p>
+                            <label class="thu cb" id="thulb22" for="thu22" ></label>
+                                    <input class="thu" id="thu21" type="checkbox" name="thu21" value="E" >
+                                </p></td>
+                            <td> <p>
+                                <label class="fri cb" id="frilb22" for="fri22" ></label>
+                                    <input class="fri" id="fri22" type="checkbox" name="fri22" value="E" >
+                                </p></td>
+                            <td> <p>
+                                <label class="sat cb" id="satlb22" for="sat22" ></label>
+                                    <input class="sat" id="sat22" type="checkbox" name="sat22" value="E" >
+                                </p></td>
+                        </tr>
+                    </table>
+                </div>
+            <!-- ------------------------------------------ -->
+            <div id="tips_home" title="Tips" class="panel">
+                <header>
+                    <h1><span style="font-weight:bold">you're fat</span> <span style="color:#d35400">|</span> she is not</h1>
+                    <a href="#info" id="" class="new-icon disclaimer disclaimer_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a><a href="#" id="" class="new-icon info info_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a>
+                </header>
+                <div style="border-bottom:1px solid #ef5723; width:100%">
+                    <a href="#" class="button" style="width:40%;background:#ef5723;padding:5px;border-radius: 13px 13px 0px 0px;">Tips</a>
+                </div>
+                <ul class="qb-list">
+                    <li>Some good dairy substitutes for your morning coffee are unsweetened rice milk, soy milk or almond milk. </li>
+                    <li>Wiggling your toes first thing in the morning stimulates your entire body. </li>
+                    <li>Drinking a full glass of water in the morning is a great way to get things flowing. </li>
+                    <li>A great bread substitute is just not eating bread. You learn not to miss it. </li>
+                    <li>Drink fresh made vegetable juices to help fight your sugar cravings. </li>
+                    <li>Dark chocolate may be a stepping stone to becoming sugar free, but it too must go. </li>
+                    <li>Eating a lot of small meals throughout the day is not better than giving your body time to digest completely between meals. </li>
+                    <li>Eating three meals a day was just made up, but our bodies like routine. </li>
+                    <li>Fasting may be a quick way to cleanse, but a proper diet will get you there just the same. </li>
+                    <li>If you slouch, your internal organs don't have the freedom to express themselves. </li>
+                    <li>Smoking makes you ugly inside and out. </li>
+                    <li>A diabetic's recommended diet and exercise routine are good for everyone. </li>
+                    <li>Go barefoot. Touch Mother Earth. She will heal you. </li>
+                    <li>You may need to take vitamin D. Ask your doctor. </li>
+                    <li>Stay neat and organized. You will be surprised at how much time it saves you. </li>
+                    <li>Buy one great outfit over 10 average outfits. </li>
+                    <li>Learn etiquette. It will always serve you. </li>
+                    <li>Vitamins may be a huge waste of money. Just use that money the buy better, vitamin rich foods. </li>
+                    <li>Organic food is ridiculously over priced but it is not over valued. </li>
+                    <li>Did you meditate today? You look calm and radiant. </li>
+                    <li>Your cats and dogs do downward dog in the morning, you should too. </li>
+                    <li>Look in the mirror and say goodbye to the excess weight you've been carrying around and get ready to start losing it. </li>
+                    <li>Your health is one thing that no one can take from you but you have to get it first. </li>
+                    <li>Eat paleo; meat, fruits and vegetables for a healthy diet. </li>
+                    <li>The four pillars to a healthy life are eating paleo, being social, fresh air and moderation in all things.  </li>
+                    <li>A cold shower in the winter will keep you warmer throughout the day. </li>
+                    <li>Two ways to get your feet warm are to soak them in hot water or to visual you are running them through hot sand. </li>
+                    <li>Your hair has natural healthy oils. Not need to shampoo them off everyday. </li>
+                    <li>Avoid SLS, Sodium Lauryl Sulfate in all your soaps, shampoos and toothpastes. </li>
+                    <li>Avoid the three dietary evils: wheat, dairy and sugar of all kinds. </li>
+                    <li>Put all the 'substitutes' on the Avoid list. </li>
+                    <li>Grow your own is not just for marijuana. </li>
+                    <li>Juicing is the best dietary supplement you can do. </li>
+                    <li>Eat slow enough to experience that tiny little burp that tells you that you have eaten the perfect amount and then stop. </li>
+                    <li>Beer = empty carbs = weight gain. </li>
+                    <li>Substitute glass for plastic as much as you can. </li>
+                    <li>Soda is the worst. </li>
+                    <li>You don't want to know how much sugar you eat. Stop being that statistic. </li>
+                    <li>People tend to be too uptight about sex which is a healthy part of life. </li>
+                    <li>Fresh is best. </li>
+                    <li>The example you give your children outlives you. </li>
+                    <li>Do something nice for someone - all the time. </li>
+                    <li>Homosexuality is not a disease, it's a birthright. </li>
+                    <li>Breakfast may be an important meal as a child, but you can skip it as an adult. </li>
+                    <li>Your life is the movie you should be watching more of. </li>
+                    <li>Engage in and give to charity. Tithing 10%. </li>
+                    <li>Never stop learning. </li>
+                    <li>Life is the race you win by going slower. </li>
+                    <li>It's easier to eat your veggies in a glass of juice. </li>
+                    <li>Don't let technology turn you into a robot. </li>
+                    <li>The earth at your feet, the food in your stomach, the sun on your face: see how it’s all connected?</li>
+                    <li>Gas is just another sign of a bad diet. </li>
+                    <li>Yoga helps everything. </li>
+                    <li>Find out where you food comes from. Your meat should have lived better than you do. </li>
+                    <li>Buy her flowers. Make him a nice dinner. Tell them you love them. </li>
+                    <li>If you are depressed, seek professional help. </li>
+                    <li>You cannot organize your thoughts without organizing your surroundings.</li>
+                </ul>
+                <footer>
+                        <div class="grid" style="padding-top:0px">
+                            <div class="col1-3"><a href="#" class="custom_back"><img src="css/images/back.png" width="100%"></a></div>
+                            <div class="col2-3" style="width:100%;text-align:right;margin-top:1vh"><span style="padding:2% 6%">Based on book by Sachin Mayi</span></div>
+                        </div>
+                    </footer>
+            </div>
+            <!-- ------------------------------------------ -->
+            <div class="panel" id="purchases_home" title="Purchases">
+                <header>
+                    <h1><span style="font-weight:bold">you're fat</span> <span style="color:#d35400">|</span> she is not</h1>
+                    <a href="#info" id="" class="new-icon disclaimer disclaimer_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a><a href="#" id="" class="new-icon info info_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a>
+                </header>
+                <div style="border-bottom:1px solid #f2a829; width:100%">
+                    <a href="#" class="button" style="width:40%;background:#f2a829;padding:5px;border-radius: 13px 13px 0px 0px;">Purchases</a>
+                </div>
+                <ul class="qb-list">
+                    <li style="background:inherit">
+                        <a href='javascript:void(0)' id="bw_version" class="nrm-button" style="color:#000;background:#f2a829">Black/White version</a>
+                    </li>
+                    <li style="background:inherit">
+                        <a href='javascript:void(0)' id="co_version" class="nrm-button" style="color:#000;background:#f2a829">Color version</a>
+                    </li>
+                </ul>
+                <footer>
+                    <div class="grid" style="padding-top:0px">
+                        <div class="col1-3"><a href="#" class="custom_back"><img src="css/images/back.png" width="100%"></a></div>
+                        <div class="col2-3" style="width:100%;text-align:right;margin-top:1vh"><span style="padding:2% 6%">Based on book by Sachin Mayi</span></div>
+                    </div>
+                </footer>
+
+
+            </div>
+            <!-- ------------------------------------------ -->
+            <div id="friends_home" title="Edit profile" class="panel">
+            <header>
+                <h1><span style="font-weight:bold">you're fat</span> <span style="color:#d35400">|</span> she is not</h1>
+               <a href="#info" id="" class="new-icon disclaimer disclaimer_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a><a href="#" id="" class="new-icon info info_trig" style="color:#ee3968 !important; border-color:#ee3968 !important"></a>
+            </header>
+            <footer>
+                <div class="grid" style="padding-top:0px">
+                    <div class="col1-3"><a href="#" class="custom_back"><img src="css/images/back.png" width="100%"></a></div>
+                    <div class="col2-3" style="width:100%;text-align:right;margin-top:1vh"><span style="padding:2% 6%">Based on book by Sachin Mayi</span></div>
+                </div>
+            </footer>
+            <div style="border-bottom:1px solid #ee3968; width:100%">
+                <a href="#" class="button" style="width:40%;background:#ee3968;padding:5px;border-radius: 13px 13px 0px 0px;">Share</a>
+            </div>
+            <div style="padding:2%;">
+                <a href="#" style="background-color:#ee3968;font-weight:bold" class="nrm-button">Leaderboards</a>
+                <a href="#" style="background-color:#ee3968;font-weight:bold" class="nrm-button" onclick="$('#ach_list').toggle()">Achievements</a>
+                <div style="padding:0% 3%;">
+                    <ul class="ques-list" id="ach_list" style="display:none">
+                        <li id="ach_1">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Health day!</span><br>
+                                    <span style="font-size: 16px">First day of good health.</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_2">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Health streak!</span><br>
+                                    <span style="font-size: 16px">First week of the good health.</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_3">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Big Loser!</span><br>
+                                    <span style="font-size: 16px">Lost <span class="wt_loosed"></span>&nbsp;<span class="wt_unit"></span></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_4">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Something good!</span><br>
+                                    <span style="font-size: 16px">Filled out info</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_5">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">No lactose?</span><br>
+                                    <span style="font-size: 16px">No dairy for a week</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_6">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Tanned!</span><br>
+                                    <span style="font-size: 16px">Week of sun time</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_7">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Clean streak!</span><br>
+                                    <span style="font-size: 16px">Week of bathing</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_8">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Mr. Fantastic</span><br>
+                                    <span style="font-size: 16px">Streching for a week</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_9">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Happy days!</span><br>
+                                    <span style="font-size: 16px">Positive mental attitude for a week</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li id="ach_10">
+                            <div class="grid" style="padding:0px;">
+                                <div class="col1-3" style="text-align:center">
+                                    <center>
+                                        <div style="padding: 5px; background: #fff; width: 60px; border-radius: 65px; height: 60px;">
+                                            <div style="border: 2px solid #ee3968; width: 50px; text-align: center; padding: 15px; padding-left: 13px; border-radius: 69px"><span class="icon star big"></span></div>
+                                        </div>
+                                    </center>
+                                </div>
+                                <div class="col2-3">
+                                    <span style="font-size: 20px">Bookworm</span><br>
+                                    <span style="font-size: 16px">Purchased the book</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <script type="text/javascript">
+
+                </script>
+                <a href="#" style="background-color:#ee3968;font-weight:bold" class="nrm-button">Share scores on Facebook</a>
+            </div>
+
+            </div>
+                <div id="info_m" title="Info" class="panel" data-modal="true">
+                <div style="padding:20px 0px;"></div>
+                    <p style="color:#000">
+                        <p>YFSN will help you to start improving your lifestyle and
+eating habits to boost your health with simple small changes. It's not a diet.
+It's not a workout. It's a lifestyle!</p>
+
+<p> </p>
+
+<p>How it works: The key to achieving and maintaining a healthy
+lifestyle and weight isn't about short term dietary changes. It's about
+incorporating a healthy diet is easy and simple to maintain and that excludes
+food groups that never benefit you and will end up never missing. YFSN takes
+the baby steps approach to developing new habits, each new healthy habit
+building on the next. No more failing. No more going off. Just progress.</p>
+
+<p> </p>
+
+<p>First</p>
+
+<p>Begin by reading my book You're Fat, She's Not. Then start
+using this App to track your progress.</p>
+
+<p> </p>
+
+<p>Track and Compare</p>
+
+<p>The YFSN App will evaluate your daily activities and rate
+your progress on a daily, weekly and monthly basis. This will allow you to see
+exactly why you are making progress, losing weight, getting healthier, feeling
+more energy or why you are not making the progress you should be making. With
+this App you can also create a group to inspire and compare your progress with
+others. </p>
+
+<p> </p>
+
+<p>Adjust</p>
+
+<p>YFSN is a complete health guide for every aspect of your
+life. We make product suggestions, offer recipes, make daily routine
+recommendations and give you great stretches and exercises to help you rock our
+world. There are plenty of choices to suit every lifestyle and each choice
+leads to the better, healthier you.</p>
+
+<p> </p>
+
+<p>Features</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Health
+Profile</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>YFSN
+log</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Tracking
+and Analysis </p>
+
+<p> </p>
+
+<p>Health is the most valuable possession in life! If you are
+really serious about taking control of your health, a Premium account is right
+for you. Unlock all the Premium features of YFSN!</p>
+                    </p>
+                    <header>
+                        <a href="#" class="close_modal icon close" style="float: right; text-decoration: none; color: inherit; padding: 12px;"></a>
+                        <h1>Info</h1>
+                    </header>
+                </div>
+                <div title="Today's Data" id="thu_modal" class="panel" data-modal="true" scrolling="true">
+                    <header>
+                        <h1>Today's Data</h1>
+                    </header>
+                    <table>
+                        <tr></tr>
+                        <tr style="padding:5px">
+                            <td>Start weight</td>
+                            <td><input type="number" class="today_form_inp" id="start_wt_ip"></td>
+                            <td class="wt_ip">Kilograms</td>
+                        </tr>
+                        <tr style="padding:5px">
+                            <td>General feeling</td>
+                            <td>
+                                <div class="grid">
+                                    <div class="col2"><span id="#gen_feel"><label style="background:#fff" class="thisday cb" id="lb2" for="gfeel" ></label> <input class="css-checkbox" id="gfeel" type="checkbox" name="gfeel" value="0" ></span></div>
+                                    <div class="col2"><span class="gfeel">Neutral</span></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="padding:5px">
+                            <td>General appearance</td>
+                            <td>
+                                <div class="grid">
+                                    <div class="col2"><span id="#gen_feel"><label style="background:#fff" class="thisday cb" id="lb3" for="gappe" ></label> <input class="css-checkbox" id="gappe" type="checkbox" name="gappe" value="0" ></span></div>
+                                    <div class="col2"><span class="gappe">Neutral</span></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Stretched
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb4" id="radio4" class="css-checkbox lb lb4" /><label for="radio4" class="css-label radGroup4"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb4" id="radio5" class="css-checkbox lb lb4" checked="checked" value="no" /><label for="radio5" class="css-label radGroup4"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Hydrated
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb5" id="radio6" class="css-checkbox lb lb5" /><label for="radio6" class="css-label radGroup5"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb5" id="radio7" class="css-checkbox lb lb5" checked="checked" value="no" /><label for="radio7" class="css-label radGroup5"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Eliminated
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb6" id="radio8" class="css-checkbox lb lb6" /><label for="radio8" class="css-label radGroup6"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb6" id="radio9" class="css-checkbox lb lb6" checked="checked" va lue="no" /><label for="radio9" class="css-label radGroup6"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Bathed
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb7" id="radio10" class="css-checkbox lb lb7" /><label for="radio10" class="css-label radGroup7"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb7" id="radio11" class="css-checkbox lb lb7" checked="checked" value="no" /><label for="radio11" class="css-label radGroup7"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Meditated
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb8" id="radio12" class="css-checkbox lb lb8" /><label for="radio12" class="css-label radGroup8"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb8" id="radio13" class="css-checkbox lb lb8" checked="checked" value="no" /><label for="radio13" class="css-label radGroup8"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Sun – Time
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb9" id="radio14" class="css-checkbox lb lb9" /><label for="radio14" class="css-label radGroup9"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb9" id="radio15" class="css-checkbox lb lb9" checked="checked" value="no" /><label for="radio15" class="css-label radGroup9"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Earth – Time
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb10" id="radio16" class="css-checkbox lb lb10" /><label for="radio16" class="css-label radGroup10"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb10" id="radio17" class="css-checkbox lb lb10" checked="checked" value="no" /><label for="radio17" class="css-label radGroup10"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>
+                                Ate Processed Food
+                            </td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb11" id="radio18" class="css-checkbox lb lb11" /><label for="radio18" class="css-label radGroup11"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb11" id="radio19" class="css-checkbox lb lb11" checked="checked" value="no" /><label for="radio19" class="css-label radGroup11"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Ate Wheat</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb12" id="radio20" class="css-checkbox lb lb12" /><label for="radio20" class="css-label radGroup12"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb12" id="radio21" class="css-checkbox lb lb12" checked="checked" value="no" /><label for="radio21" class="css-label radGroup12"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Ate Dairy</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb13" id="radio22" class="css-checkbox lb lb13" /><label for="radio22" class="css-label radGroup13"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb13" id="radio23" class="css-checkbox lb lb13" checked="checked" value="no" /><label for="radio23" class="css-label radGroup13"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Ate Sugar</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb14" id="radio24" class="css-checkbox lb lb14" /><label for="radio24" class="css-label radGroup14"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb14" id="radio25" class="css-checkbox lb lb14" checked="checked" value="no" /><label for="radio25" class="css-label radGroup14"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Overate</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb15" id="radio26" class="css-checkbox lb lb15" /><label for="radio26" class="css-label radGroup15"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb15" id="radio27" class="css-checkbox lb lb15" checked="checked" value="no" /><label for="radio27" class="css-label radGroup15"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Excercised</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb16" id="radio28" class="css-checkbox lb lb16" /><label for="radio28" class="css-label radGroup16"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb16" id="radio29" class="css-checkbox lb lb16" checked="checked" value="no" /><label for="radio29" class="css-label radGroup16"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Focused on Posture</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb17" id="radio30" class="css-checkbox lb lb17" /><label for="radio30" class="css-label radGroup17"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb17" id="radio31" class="css-checkbox lb lb17" checked="checked" value="no" /><label for="radio31" class="css-label radGroup17"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Cleared / Organized</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb18" id="radio32" class="css-checkbox lb lb18" /><label for="radio32" class="css-label radGroup18"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb18" id="radio33" class="css-checkbox lb lb18" checked="checked" value="no" /><label for="radio33" class="css-label radGroup18"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Positive Mental Attitude</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb19" id="radio34" class="css-checkbox lb lb19" /><label for="radio34" class="css-label radGroup19"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb19" id="radio35" class="css-checkbox lb lb19" checked="checked" value="no" /><label for="radio35" class="css-label radGroup19"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>Selfless Service</td>
+                            <td> <div class="grid"><div class="col2"><input type="radio" value="yes" name="lb20" id="radio36" class="css-checkbox lb lb20" /><label for="radio36" class="css-label radGroup20"></label></div><div class="col2">Yes</div></div></td><td><div class="grid"><div class="col2"><input type="radio" name="lb20" id="radio37" class="css-checkbox lb lb20" checked="checked" value="no" /><label for="radio37" class="css-label radGroup20"></label></div><div class="col2">No</div></div></td>
+                        </tr>
+                        <tr class="ro1">
+                            <td>End of the Day weight</td>
+                            <td><input type="number" class="today_form_inp" id="end_wt_ip"></td>
+                            <td class="wt_ip">Kilograms</td>
+                        </tr>
+                    </table>
+                    <footer>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><a href="#" id="add_today_chart" class="icon check mod-button">Done</a></td>
+                        </tr>
+                    </table>
+                    <div class="grid">
+                        <div class="col2-3"></div>
+                        <div class="col1-3"></div>
+                    </div>
+                    </footer>
+                </div>
+                <div id="progress_upload" title="Uploading.." class="panel" data-modal="true" data-footer="sel_bin">
+                <div style="padding-top:60%;"></div>
+                    <p>Do not close the app or the window. Uploading the video to Community Voice Cloud. The video will shortly appear in your console</p>
+                    <span id="proga"></span>
+               </div>
+                <div id="interview_ques" title="Question banks" class="panel" data-modal="true">
+                    <p id="qbank_list_wrap">Getting question banks..</p>
+                </div>
+                <div id="qbank_ques" title="Questions List" class="panel" data-modal="true" data-footer="start_interview_trig">
+                    <div id="ques_list_wrap">Getting questions..</div>
+                    <footer id='start_interview_trig'>
+                        <a href="#" id="start_cam_trig" class="button icon camera">Start the camera</a>
+                    </footer>
+                </div>
+                <div id="map_alert" title="Maps" class="panel" data-footer="none">
+                    <div id="maps_div"></div>
+                </div>
+                <div id="interview_start" title="Response form" class="panel" data-modal="true" data-footer="initiate">
+                    <div class="modal-form-wrap">
+                        <p>Full name</p>
+                        <input type="text" name="fl_name" id="interviewee_name" placeholder="Enter your fullname">
+                    </div>
+                    <div class="modal-form-wrap">
+                        <p>Select user type</p>
+                        <select placeholder="Select user"><option>one</option><option>two</option><option>one</option></select>
+                    </div>
+                    <div id="error_msg"></div>
+                    <div id="loc_res_wrap">
+                        <p class="icon location">Set current location</p>
+                        <p class="loc-result">London Tower, GB</p>
+                        <center>
+                            <button id="prof-ctrl-info" class="nav-button icon refresh profile-but button-small" data-ignored-pressed="true">refresh</button>
+                        </center>
+                    </div>
+                    <footer id='initiate'>
+                        <a href="#" id='get_ques_trig' class='button'>Get questions</a>
+                    </footer>
+                </div>
+            <!-- ------------------------------------------ -->
+            <!-- navbar -->
+            </div>
+            <div id="header">
+
+            </div>
+            <footer id='footerui'>
+                <a href="#" id='navbar_home' class='button'>Update</a>
+            </footer>
+            <aside>
+                <div style="width:100%;border-radius:5px;padding:10px;border-bottom:1px solid #fff">Score</div>
+                <div style="width:100%;border-radius:5px;padding:10px;border-bottom:1px solid #fff">
+                  <div style="width:100%;border-radius:5px;padding:10px;border:1px solid #fff">Week:&nbsp;&nbsp;<span id="all_week_score">NA</span></div>
+                </div>
+                <div style="width:100%;border-radius:5px;padding:10px;border-bottom:1px solid #fff">
+                  <div style="width:100%;border-radius:5px;padding:10px;border:1px solid #fff">Month:<span id="all_month_score">NA</span></div>
+                </div>
+                <div style="width:100%;border-radius:5px;padding:10px;border:1px solid #fff">
+                  <div style="width:100%;border-radius:5px;padding:10px;border:1px solid #fff">Year:<span id="all_year_score">NA</span></div>
+                </div>
+                <div style="width:100%;border-radius:5px;padding:10px;border:1px solid #fff">
+                  <div style="width:100%;border-radius:5px;padding:10px;border:1px solid #fff">All Time:<span id="all_time_score">NA</span></div>
+                </div>
+            </aside>
+            <!-- ------------------------------------------ -->
+        </div>
+        <script type="text/javascript" charset="utf-8" src="js/lawnchair.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/models.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/events.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/triggers.js"></script>
+        <script type="text/javascript">
+        Model.init()
+        Model.checkFirstRun(function (run) {
+            if (!run) {
+                $.ui.showMask("Intitalizing..");
+                Model.addAppSettings();
+                Events.triggerAch('ach_1')
+                $.ui.showMask("Enter the information about you..")
+                setTimeout(function () {
+                   $.ui.hideMask()
+                   $('#afui').popup('Enter your information. It is important to understand you.')
+                   $.ui.loadContent('my_info_edit',false,false,'none')
+                },3000);
+            }
+        });
+        $("#date_start").html(moment().format("Do MMMM YYYY"));
+
+    /*  Model.getTodayData(function(config) {
+
+    }); */
+    Model.getWeekData(function(config) {
+        Model.getMonthData();
+    });
+                $(document).ready(function () {
+
+                    function placemainmenu () {
+                        var windwid,windht;
+                        windwid = document.getElementById('afui').clientWidth;
+                        windht=document.getElementById('afui').clientHeight-49;
+                        windht = windht/5.4;
+                        $(".main-nav li a").css('width',Math.round(windht)+'px');
+                        //$(".main-nav").css('margin-bottom',Math.round(window.innerHeight/110)+'%');
+                            // if (640>windwid>1079) {
+                            //     $(".main-nav")[0].style.webkitTransform = 'rotate(90deg) translateX('+Math.round(windht)*2.31+'px) translateY(-'+Math.round(((windwid)*0.1)-(windwid)*0.012)+'px)';
+                            // } else{
+                            //     $(".main-nav")[0].style.webkitTransform = 'rotate(90deg) translateX('+Math.round(windht)*1.805+'px) translateY(-'+Math.round(windwid)*0.1425+'px)';
+                            // };
+                            // if (window.innerHeight>640) {
+                            //     //ideal for ip6
+                            //     $(".main-nav")[0].style.webkitTransform = 'rotate(90deg) translateX('+Math.round(windht)*(2.25-(windht-Math.round(windht)))+'px) translateY(-'+((Math.round(windwid)*0.1)-(Math.round(windwid)*0.045))+'px)';
+                            // } else{
+                            //     //ideal for nexus devices
+                            //     $(".main-nav")[0].style.webkitTransform = 'rotate(90deg) translateX('+Math.round(windht)*(1.95-(windht-Math.round(windht)))+'px) translateY(-'+Math.round(windwid)*0.06+'px)';
+                            // };
+                            $(".main-nav")[0].style.webkitTransform = 'rotate(90deg)';
+                         
+                            
+                        $.ui.launch()
+                        $("#home").css('background','url("css/images/main.png")');
+                        $("#home").css('background-size','70%');
+                        $("#home").css('background-repeat', 'no-repeat');
+                        $('.cb').css('padding', windwid/33+'px');
+                    }
+                    placemainmenu()
+                });
+                    $(document).ready(function () {
+                        var iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+                        if (iOS) {
+                            $("#afui").css('padding-top','20px');
+                            $('.custom_back').css('display','block')
+                        };
+                    })
+                </script>
+    </body>
+</html>

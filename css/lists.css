@@ -1,0 +1,262 @@
+#afui .list {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  list-style: none;
+  background-color: #fff;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+#afui .list li {
+  display: block;
+  list-style: none;
+  position: relative;
+  padding: 20px 20px 20px 0px;
+  border-bottom: none;
+}
+#afui .list li:first-child {
+  border-top: none;
+}
+#afui .list > li > a {
+  display: block;
+  position: relative;
+  display: block;
+  color: inherit;
+  margin: -20px -20px -20px -10px;
+  text-decoration: none;
+  padding: 20px 20px 20px 10px;
+  text-transform: uppercase;
+}
+#afui .list a .af-badge {
+  position: absolute;
+  right: 30px;
+  top: 48%;
+  margin-top: -10px;
+}
+#afui .list > li > a:after {
+  position: absolute;
+  right: 8px;
+  font-family: 'chevron';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f054";
+  top: 50%;
+  margin-top: -0.5em;
+  color:inherit;
+  display: none;
+}
+#afui .list .divider {
+  position: relative;
+  top: -1px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  background-color: #dfe0e2;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  padding-right: 60px;
+}
+#afui .list.inset {
+  text-align: left !important;
+  border-radius: 6px;
+  margin: 10px;
+   padding-left: 10px !important;
+}
+#afui .list.inset li:first-child {
+  border-top: none;
+}
+#afui .list.inset li:last-child {
+  border-bottom: none;
+}
+#afui .qb-list {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 10px;
+  list-style: none;
+  background-color: inherit;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+}
+#afui .qb-list li {
+  display: block;
+  list-style: none;
+  position: relative;
+  padding: 20px;
+  background: #FFFFFF;
+  border-bottom: none;
+  color: #000;
+  margin: 1.5%;
+}
+#afui .qb-list li:first-child {
+  border-top: none;
+}
+#afui .qb-list > li > a {
+  display: block;
+  position: relative;
+  display: block;
+  color: inherit;
+  margin: -20px -20px -20px -10px;
+  text-decoration: none;
+  padding: 20px 20px 20px 10px;
+  text-transform: uppercase;
+}
+#afui .qb-list a .af-badge {
+  position: absolute;
+  right: 30px;
+  top: 48%;
+  margin-top: -10px;
+}
+#afui .qb-list > li > a:after {
+  position: absolute;
+  right: 8px;
+  font-family: 'chevron';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f054";
+  top: 50%;
+  margin-top: -0.5em;
+  color:inherit;
+}
+#afui .qb-list .divider {
+  position: relative;
+  top: -1px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  background-color: #dfe0e2;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  padding-right: 60px;
+}
+#afui .qb-list.inset {
+  text-align: left !important;
+  border-radius: 6px;
+  margin: 10px;
+   padding-left: 10px !important;
+}
+#afui .qb-list.inset li:first-child {
+  border-top: none;
+}
+#afui .qb-list.inset li:last-child {
+  border-bottom: none;
+}
+#afui .ques-list {
+  color: #000;
+  height: 250px;
+  margin-top:-8px;
+  margin-bottom: 10px;
+  list-style: none;
+  background-color: inherit;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-left: 1px solid #f4a92a !important;
+  border-right: 1px solid #f4a92a !important;
+  border-bottom: 1px solid #f4a92a !important;
+}
+#afui .ques-list li {
+  margin: 10px;
+  background: #eee;
+  display: block;
+  list-style: none;
+  position: relative;
+  padding: 5px 20px 5px 0px;
+}
+#afui .ques-list li:first-child {
+  border-top: none;
+}
+#afui .ques-list li:last-child {
+  border-top: none;
+  margin: 10px;
+  border-bottom: 1px solid #f4a92a !important;
+}
+#afui .ques-list > li > a {
+  display: block;
+  position: relative;
+  display: block;
+  color: inherit;
+  margin: -20px -20px -20px -10px;
+  text-decoration: none;
+  padding: 20px 20px 20px 20px;
+}
+#afui .ques-list a .af-badge {
+  position: absolute;
+  right: 30px;
+  top: 48%;
+  margin-top: -10px;
+}
+#afui .ques-list > li > a:after {
+  position: absolute;
+  right: 8px;
+  font-family: 'chevron';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f054";
+  top: 50%;
+  margin-top: -0.5em;
+  color:inherit;
+  display: none;
+}
+#afui .ques-list .divider {
+  position: relative;
+  top: -1px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  background-color: #dfe0e2;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  padding-right: 60px;
+}
+#afui .ques-list.inset {
+  text-align: left !important;
+  border-radius: 6px;
+  margin: 10px;
+   padding-left: 10px !important;
+}
+#afui .ques-list.inset li:first-child {
+  border-top: none;
+}
+#afui .ques-list.inset li:last-child {
+  border-bottom: none;
+}
+.nav-but-wrap{
+  padding: 10px 20px 10px 0px !important;
+}
+#profile.panel{
+  padding: 0px !important;
+}
+#prof-list li{
+  padding: 10px 20px 0px 0px !important;
+}
+.no-border{
+  border: none !important;
+}
+#afui .ques-list li.ach {
+background: #ee3968 !important;
+}
