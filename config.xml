@@ -2,7 +2,7 @@
 <widget id="com.arcoirislabs.yfsn" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Youre Fat Shes Not</name>
     <description>
-        You're Fat She's Not is an app for health freaks.
+        You're Fat She's Not is an app for health freaks. It is a health planner
     </description>
     <author email="ameyhk.android@gmail.com" href="http://arcoirislabs.com">
         Arcoiris Labs
