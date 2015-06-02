@@ -171,7 +171,7 @@ var Events = {
 		Model.addAch(ach,function () {
 			$("'#"+ach+"'").addClass('ach')
             Model.getAchS(ach,function (dt) {
-                cordova.plugins.notification.local.add({title: dt.head,text: dt.s});
+                cordova.plugins.notification.local.schedule({title: dt.head,text: dt.s});
             })
         })
 	}
