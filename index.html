@@ -3,18 +3,6 @@
 <html>
 
     <head>
-        <script>
-        (function() {
-    if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement("style");
-        msViewportStyle.appendChild(
-            document.createTextNode("@-ms-viewport{width:auto!important}")
-        );
-        document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-    }
-})();
-</script>
-
         <title>YFSN</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
@@ -26,6 +14,20 @@
        <!--
      <link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
   -->
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script>
+            var onDeviceReady = function () {
+                console.log("fired")
+                StatusBar.hide();  
+                
+                setTimeout(function (argument) {
+                    StatusBar.show()
+                },8200)
+            };
+            document.addEventListener("deviceready", onDeviceReady, false);
+            //This code is used to run as soon as intel.xdk activates
+            
+        </script>
       <link rel="stylesheet" type="text/css" href="css/main.css"  />
       <link rel="stylesheet" type="text/css" href="css/appframework.css"  />
       <link rel="stylesheet" type="text/css" href="css/lists.css"  />
@@ -40,38 +42,9 @@
       <link rel="stylesheet" type="text/css" href="plugins/css/af.scroller.css"  />
       <link rel="stylesheet" type="text/css" href="plugins/css/af.selectBox.css"  />
       <link rel="stylesheet" type="text/css" href="plugins/css/af.progress.css"  />
-        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-         <script type="text/javascript" charset="utf-8" src="./plugins/com.plugin.datepicker/www/android/DatePicker.js"></script>
-       <script type="text/javascript" src="./plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"></script>
-        <script type="text/javascript" src="./plugins/org.apache.cordova.statusbar/www/statusbar.js"></script>
-        <!-- uncomment for intel.xdk apps
-        <script type="text/javascript" charset="utf-8" src="intelxdk.js"></script>
-        <script type="text/javascript" charset="utf-8" src="xhr.js"></script>
-        -->
+        
         <script type="text/javascript" charset="utf-8" src="./appframework.js"></script>
-        <!-- include af.desktopBrowsers.js on desktop browsers only -->
-        <script>
-            var onDeviceReady = function () {
-                console.log("fired")
-                StatusBar.hide();  
-                
-                setTimeout(function (argument) {
-                    StatusBar.show()
-                },8200)
-            };
-            document.addEventListener("deviceready", onDeviceReady, false);
-
-            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
-                var script = document.createElement("script");
-                script.src = "plugins/af.desktopBrowsers.js";
-                var tag = $("head").append(script);
-                //$.os.desktop=true;
-            }
-
-          //  $.feat.nativeTouchScroll=true;
-            //This code is used to run as soon as intel.xdk activates
-            
-        </script>
+        
         <script type="text/javascript" charset="utf-8" src="./plugins/af.actionsheet.js"></script>
         <script type="text/javascript" charset="utf-8" src="./plugins/af.css3animate.js"></script>
         <script type="text/javascript" charset="utf-8" src="./plugins/af.passwordBox.js"></script>
